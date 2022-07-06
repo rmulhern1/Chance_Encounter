@@ -454,8 +454,8 @@ GameObject:
   - component: {fileID: 169382482}
   - component: {fileID: 169382480}
   - component: {fileID: 169382479}
-  - component: {fileID: 169382481}
   - component: {fileID: 169382478}
+  - component: {fileID: 169382481}
   - component: {fileID: 169382486}
   m_Layer: 0
   m_Name: Teleportation
@@ -659,7 +659,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1bbfae4990937048b888479caae4fdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TransitionDuration: 0.5
+  TransitionDuration: 0.192
   PositionLerp:
     serializedVersion: 2
     m_Curve:
@@ -667,7 +667,7 @@ MonoBehaviour:
       time: 0
       value: 0
       inSlope: 0
-      outSlope: 1
+      outSlope: 0
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
@@ -675,7 +675,7 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 1
       value: 1
-      inSlope: 1
+      inSlope: 0
       outSlope: 0
       tangentMode: 0
       weightedMode: 0
