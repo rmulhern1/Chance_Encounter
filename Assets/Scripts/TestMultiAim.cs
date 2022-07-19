@@ -7,7 +7,6 @@ using UnityEngine.Animations.Rigging;
 public class TestMultiAim : MonoBehaviour
 {
     public bool testBool = false;
-
     public Rig rig;
 
 
@@ -25,4 +24,10 @@ public class TestMultiAim : MonoBehaviour
             rig.weight = 0;
         }
     }
+
+    void rigWeight(int newWeight) 
+    {
+        rig.weight = newWeight;
+    }
+
 }
