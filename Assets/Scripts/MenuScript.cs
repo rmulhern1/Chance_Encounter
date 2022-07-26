@@ -5,10 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class MenuScript : MonoBehaviour
 {
+    [SerializeField] GameObject ship;
+    [SerializeField] GameObject fadeOut;
+
     public void Start_Btn()
     {
-        SceneManager.LoadScene(1);
-        Debug.Log("Quit Button pushed");
+        //Start button sets menu active to false from inspector
+        //Play ship animation with animation event to trigger scene change
+        ship.GetComponent<Animator>().Play("IntroShipAnimation");
+        fadeOut.GetComponent<Animator>().Play("FadeOutAnimation");
+        Debug.Log("Start Button pushed");
     }
 
     public void Quit_Btn()
@@ -19,13 +25,13 @@ public class MenuScript : MonoBehaviour
 
     public void About_Btn() 
     {
+        //Inspector enables and disables necessary panels and UI items
         Debug.Log("About button pushed");
-        //Show panels for about section
     }
 
     public void Controls_Btn() 
     {
+        //Inspector enables and disables necessary panels and UI items
         Debug.Log("Controls button pushed");
-        //Show panels for the how to section
     }
 }

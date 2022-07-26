@@ -356,6 +356,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d97ee37ea8af31f46b1d6275a1eda49a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemProximity: 0
+  isDone: 0
+  puzzleTracker: 0
 --- !u!1001 &151842139
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4239,7 +4242,7 @@ Transform:
   - {fileID: 1271057379}
   - {fileID: 38414252}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1518762404
 GameObject:
@@ -6583,87 +6586,6 @@ MonoBehaviour:
     m_MaintainTargetRotationOffset: 0
   m_SourceObjectsGUIToggle: 1
   m_SettingsGUIToggle: 1
---- !u!1001 &1973463959
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 5063396924701181465, guid: 4a3c8f82a01756d43afc639499c0ce51, type: 3}
-      propertyPath: _rigidbody
-      value: 
-      objectReference: {fileID: 1973463960}
-    - target: {fileID: 5063396924701181466, guid: 4a3c8f82a01756d43afc639499c0ce51, type: 3}
-      propertyPath: m_Name
-      value: GrabInteractable
-      objectReference: {fileID: 0}
-    - target: {fileID: 5063396924701181467, guid: 4a3c8f82a01756d43afc639499c0ce51, type: 3}
-      propertyPath: m_RootOrder
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 5063396924701181467, guid: 4a3c8f82a01756d43afc639499c0ce51, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.062
-      objectReference: {fileID: 0}
-    - target: {fileID: 5063396924701181467, guid: 4a3c8f82a01756d43afc639499c0ce51, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.84
-      objectReference: {fileID: 0}
-    - target: {fileID: 5063396924701181467, guid: 4a3c8f82a01756d43afc639499c0ce51, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.813
-      objectReference: {fileID: 0}
-    - target: {fileID: 5063396924701181467, guid: 4a3c8f82a01756d43afc639499c0ce51, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5063396924701181467, guid: 4a3c8f82a01756d43afc639499c0ce51, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5063396924701181467, guid: 4a3c8f82a01756d43afc639499c0ce51, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5063396924701181467, guid: 4a3c8f82a01756d43afc639499c0ce51, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5063396924701181467, guid: 4a3c8f82a01756d43afc639499c0ce51, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5063396924701181467, guid: 4a3c8f82a01756d43afc639499c0ce51, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5063396924701181467, guid: 4a3c8f82a01756d43afc639499c0ce51, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5063396925436119763, guid: 4a3c8f82a01756d43afc639499c0ce51, type: 3}
-      propertyPath: _interactableView
-      value: 
-      objectReference: {fileID: 1973463961}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 4a3c8f82a01756d43afc639499c0ce51, type: 3}
---- !u!54 &1973463960 stripped
-Rigidbody:
-  m_CorrespondingSourceObject: {fileID: 8272386621034490187, guid: 4a3c8f82a01756d43afc639499c0ce51, type: 3}
-  m_PrefabInstance: {fileID: 1973463959}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1973463961 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5063396924701181465, guid: 4a3c8f82a01756d43afc639499c0ce51, type: 3}
-  m_PrefabInstance: {fileID: 1973463959}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a1bc992571301d4a9602ac95ef4c71a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &2017932529
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7028,6 +6950,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d97ee37ea8af31f46b1d6275a1eda49a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemProximity: 0
+  isDone: 0
+  puzzleTracker: 0
 --- !u!4 &2137955455
 Transform:
   m_ObjectHideFlags: 0
