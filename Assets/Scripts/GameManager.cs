@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] bool isDone;
     [SerializeField] int puzzleTracker = 0;
 
+    Animator npcAnimator;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,27 +19,40 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (itemProximity > 1 && isDone != true) {
+        /*if (itemProximity > 1 && isDone != true) {
             itemPositions();
             isDone = true;
-        }
+        }*/
 
         if (puzzleTracker >= 3) {
-            Debug.Log("All puzzle elements compelte");
             puzzleComplete();
         }
     }
 
-    void itemPositions() 
+
+    public void addPuzzleElement() 
+    {
+        //Tracks number of puzzle elements in correct location
+        puzzleTracker += 1;
+    }
+
+    public void minusPuzzleElement() 
+    {
+        puzzleTracker -= 1;
+    }
+
+    /*void itemPositions() 
     { 
         
-    }
+    }*/
 
     void puzzleComplete() 
     {
+        Debug.Log("All puzzle elements compelte");
         //Play character animation
         //Play ship animation
         //Play UI animation
         //Return to main menu
+        //npcAnimator.Play("Animation");
     }
 }
