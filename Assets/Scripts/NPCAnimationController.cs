@@ -8,6 +8,7 @@ public class NPCAnimationController : MonoBehaviour
     [SerializeField] GameObject[] hologramSlides;
 
     [SerializeField] int currentSlide;
+    [SerializeField] bool inputA;
 
     // Start is called before the first frame update
     void Start()
@@ -18,7 +19,7 @@ public class NPCAnimationController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (OVRInput.Get(OVRInput.Button.One))
+        if (OVRInput.GetDown(OVRInput.Button.One))
         {
             Debug.Log("A button pressed");
             currentSlide += 1;
@@ -29,12 +30,13 @@ public class NPCAnimationController : MonoBehaviour
                 hologramSlides[currentSlide].SetActive(false);
                 npcAnimator.GetComponent<Animator>().SetTrigger("AfterHologram");
             }
+
+            inputA = !inputA;
         }
     }
-
 
     //OnButtonPressDown (Controller A), currentSlide += 1
     //OnButtonPressDown (Controller B), currentSlide -= 1
     //if (currentslide > (total), hide hologram slides and resume animations/settrigger)
-    
+
 }

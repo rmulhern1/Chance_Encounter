@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3687446873682455497}
   - component: {fileID: 3687446873682455496}
   m_Layer: 5
-  m_Name: SceneFadePanel
+  m_Name: SceneFade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -567,7 +567,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 169382476}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2bb0f5a590bee8641b2298ad4ad21c1c, type: 3}
   m_Name: 
@@ -619,7 +619,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AimCollisionLayerMask:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 4294967295
 --- !u!114 &169382483
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3258,12 +3258,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b521dff8dff081743a87840eb02a3492, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  npcAnimator: {fileID: 0}
+  npcAnimator: {fileID: 1185018616}
   hologramSlides:
   - {fileID: 601267141}
   - {fileID: 2021814585}
   - {fileID: 1618976598}
   currentSlide: 0
+  inputA: 0
 --- !u!1001 &1228029008
 PrefabInstance:
   m_ObjectHideFlags: 0

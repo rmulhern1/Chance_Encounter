@@ -12,9 +12,14 @@ public class MenuScript : MonoBehaviour
     {
         //Start button sets menu active to false from inspector
         //Play ship animation with animation event to trigger scene change
-        ship.GetComponent<Animator>().Play("IntroShipAnimation");
-        fadeOut.GetComponent<Animator>().Play("FadeOutAnimation");
+        ship.GetComponent<Animator>().SetTrigger("ShipTrigger");
+        fadeOut.GetComponent<Animator>().SetTrigger("MenuFadeOut");
         Debug.Log("Start Button pushed");
+
+        //SceneManager.LoadScene(1);
+
+        StartCoroutine(SceneTransitionDelay());
+        SceneManager.LoadScene(1);
     }
 
     public void Quit_Btn()
@@ -23,15 +28,20 @@ public class MenuScript : MonoBehaviour
         Application.Quit();
     }
 
-    public void About_Btn() 
+    public void About_Btn()
     {
         //Inspector enables and disables necessary panels and UI items
         Debug.Log("About button pushed");
     }
 
-    public void Controls_Btn() 
+    public void Controls_Btn()
     {
         //Inspector enables and disables necessary panels and UI items
         Debug.Log("Controls button pushed");
+    }
+
+    IEnumerator SceneTransitionDelay() 
+    {
+        yield return new WaitForSeconds(5);
     }
 }

@@ -4827,10 +4827,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3687446873682455498, guid: bbe571d280dee054e9dc917e3bdb939f, type: 3}
-      propertyPath: m_Name
-      value: SceneFade
-      objectReference: {fileID: 0}
     - target: {fileID: 3687446874636608279, guid: bbe571d280dee054e9dc917e3bdb939f, type: 3}
       propertyPath: m_Name
       value: SceneTransition
