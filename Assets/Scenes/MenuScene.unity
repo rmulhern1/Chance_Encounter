@@ -447,9 +447,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d97ee37ea8af31f46b1d6275a1eda49a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemProximity: 0
-  isDone: 0
-  puzzleTracker: 0
+  PuzzleTracker: 0
+  npcAnimator: {fileID: 0}
+  shipAnimator: {fileID: 0}
+  UIAnimator: {fileID: 0}
+  LightAnimator: {fileID: 0}
 --- !u!4 &157085581 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 462066, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
@@ -2673,12 +2675,12 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 237767550}
         m_TargetAssemblyTypeName: SceneTransition, Assembly-CSharp
-        m_MethodName: FadeToNextLevel
-        m_Mode: 1
+        m_MethodName: MenuFadeToLevel
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -6113,9 +6115,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d97ee37ea8af31f46b1d6275a1eda49a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemProximity: 0
-  isDone: 0
-  puzzleTracker: 0
+  PuzzleTracker: 0
+  npcAnimator: {fileID: 0}
+  shipAnimator: {fileID: 0}
+  UIAnimator: {fileID: 0}
+  LightAnimator: {fileID: 0}
 --- !u!4 &2137955455
 Transform:
   m_ObjectHideFlags: 0
@@ -6285,6 +6289,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2966493454010649031, guid: bbe571d280dee054e9dc917e3bdb939f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3687446873682455497, guid: bbe571d280dee054e9dc917e3bdb939f, type: 3}
+      propertyPath: m_Color.a
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3687446874636608279, guid: bbe571d280dee054e9dc917e3bdb939f, type: 3}

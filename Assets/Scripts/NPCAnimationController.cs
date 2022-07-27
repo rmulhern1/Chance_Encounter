@@ -18,4 +18,10 @@ public class NPCAnimationController : MonoBehaviour
     {
         
     }
+
+
+    //OnButtonPressDown (Controller A), currentSlide += 1
+    //OnButtonPressDown (Controller B), currentSlide -= 1
+    //if (currentslide > (total), hide hologram slides and resume animations/settrigger)
+    
 }

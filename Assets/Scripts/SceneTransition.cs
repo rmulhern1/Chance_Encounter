@@ -28,6 +28,12 @@ public class SceneTransition : MonoBehaviour
         animator.SetTrigger("FadeOut");
     }
 
+    public void MenuFadeToLevel(int levelIndex)
+    {
+        levelToLoad = levelIndex;
+        animator.SetTrigger("MenuFadeOut");
+    }
+
     public void OnFadeComplete() 
     {
         SceneManager.LoadScene(levelToLoad);
