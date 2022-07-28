@@ -44,7 +44,7 @@ public class NPCAnimationController : MonoBehaviour
             if (currentSlide > 11)
             {
                 hologramSlides[currentSlide].SetActive(false);
-                npcAnimator.GetComponent<Animator>().SetTrigger("AfterHologram");
+                npcAnimator.GetComponent<Animator>().SetTrigger("AfterCrashHologram");
                 crashHologram = false;
                 repairHologram = true;
             }
@@ -65,7 +65,7 @@ public class NPCAnimationController : MonoBehaviour
             if (currentSlide > 16)
             {
                 hologramSlides[currentSlide].SetActive(false);
-                npcAnimator.GetComponent<Animator>().SetTrigger("AfterHologram");
+                npcAnimator.GetComponent<Animator>().SetTrigger("AfterRepairHologram");
                 repairHologram = false;
             }
 
