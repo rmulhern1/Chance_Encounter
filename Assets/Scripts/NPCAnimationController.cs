@@ -14,6 +14,7 @@ public class NPCAnimationController : MonoBehaviour
     bool repairHologram = false;
     bool decisionHologram = false;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -94,4 +95,5 @@ public class NPCAnimationController : MonoBehaviour
 
         }
     }
+
 }
