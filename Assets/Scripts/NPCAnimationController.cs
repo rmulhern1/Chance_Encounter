@@ -10,6 +10,9 @@ public class NPCAnimationController : MonoBehaviour
     [SerializeField] int currentSlide;
     [SerializeField] bool inputA;
 
+    bool crashHologram = true;
+    bool repairHologram = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +22,18 @@ public class NPCAnimationController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (crashHologram)
+        {
+            CrashHologram();
+        }
+
+        if (repairHologram) {
+            RepairHologram();
+        }
+    }
+
+    void CrashHologram() 
+    {
         if (OVRInput.GetDown(OVRInput.Button.One))
         {
             Debug.Log("A button pressed");
@@ -26,9 +41,32 @@ public class NPCAnimationController : MonoBehaviour
             hologramSlides[currentSlide - 1].SetActive(false);
             hologramSlides[currentSlide].SetActive(true);
 
-            if (currentSlide > 3) {
+            if (currentSlide > 11)
+            {
                 hologramSlides[currentSlide].SetActive(false);
                 npcAnimator.GetComponent<Animator>().SetTrigger("AfterHologram");
+                crashHologram = false;
+                repairHologram = true;
+            }
+
+            inputA = !inputA;
+        }
+    }
+
+    void RepairHologram() 
+    {
+        if (OVRInput.GetDown(OVRInput.Button.One))
+        {
+            Debug.Log("A button pressed");
+            currentSlide += 1;
+            hologramSlides[currentSlide - 1].SetActive(false);
+            hologramSlides[currentSlide].SetActive(true);
+
+            if (currentSlide > 16)
+            {
+                hologramSlides[currentSlide].SetActive(false);
+                npcAnimator.GetComponent<Animator>().SetTrigger("AfterHologram");
+                repairHologram = false;
             }
 
             inputA = !inputA;
