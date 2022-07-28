@@ -12,6 +12,7 @@ public class NPCAnimationController : MonoBehaviour
 
     bool crashHologram = true;
     bool repairHologram = false;
+    bool decisionHologram = false;
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +31,10 @@ public class NPCAnimationController : MonoBehaviour
         if (repairHologram) {
             RepairHologram();
         }
+
+        if (decisionHologram) {
+            DecisionHologram();
+        }
     }
 
     void CrashHologram() 
@@ -41,7 +46,7 @@ public class NPCAnimationController : MonoBehaviour
             hologramSlides[currentSlide - 1].SetActive(false);
             hologramSlides[currentSlide].SetActive(true);
 
-            if (currentSlide > 11)
+            if (currentSlide > 12)
             {
                 hologramSlides[currentSlide].SetActive(false);
                 npcAnimator.GetComponent<Animator>().SetTrigger("AfterCrashHologram");
@@ -62,7 +67,7 @@ public class NPCAnimationController : MonoBehaviour
             hologramSlides[currentSlide - 1].SetActive(false);
             hologramSlides[currentSlide].SetActive(true);
 
-            if (currentSlide > 16)
+            if (currentSlide > 17)
             {
                 hologramSlides[currentSlide].SetActive(false);
                 npcAnimator.GetComponent<Animator>().SetTrigger("AfterRepairHologram");
@@ -73,8 +78,20 @@ public class NPCAnimationController : MonoBehaviour
         }
     }
 
-    //OnButtonPressDown (Controller A), currentSlide += 1
-    //OnButtonPressDown (Controller B), currentSlide -= 1
-    //if (currentslide > (total), hide hologram slides and resume animations/settrigger)
+    void DecisionHologram() 
+    {
+        Debug.Log("Waiting for user to make decision");
+        if (OVRInput.GetDown(OVRInput.Button.One))
+        {
+            if (currentSlide > 18)
+            {
+                Debug.Log("A button pressed");
+                currentSlide += 1;
+                hologramSlides[currentSlide - 1].SetActive(false);
+                npcAnimator.GetComponent<Animator>().SetBool("Decision", true);
+            }
+            inputA = !inputA;
 
+        }
+    }
 }
