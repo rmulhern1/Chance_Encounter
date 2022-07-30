@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Animations.Rigging;
 
 public class NPCAnimationController : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class NPCAnimationController : MonoBehaviour
     bool repairHologram = false;
     bool decisionHologram = false;
 
+    public Rig npcRigHead;
+    public Rig npcRigTorso;
 
     // Start is called before the first frame update
     void Start()
@@ -36,6 +39,20 @@ public class NPCAnimationController : MonoBehaviour
         if (decisionHologram) {
             DecisionHologram();
         }
+    }
+
+    void RemoveRigWeight() 
+    {
+        Debug.Log("Called remove rig weight");
+        npcRigHead.weight = 0;
+        npcRigTorso.weight = 0;
+    }
+
+    void AddRigWeight() 
+    {
+        Debug.Log("Called add rig weight");
+        npcRigHead.weight = 1;
+        npcRigTorso.weight = 1;
     }
 
     void CrashHologram() 

@@ -17,9 +17,6 @@ public class MenuScript : MonoBehaviour
         Debug.Log("Start Button pushed");
 
         //SceneManager.LoadScene(1);
-
-        StartCoroutine(SceneTransitionDelay());
-        SceneManager.LoadScene(1);
     }
 
     public void Quit_Btn()
@@ -40,8 +37,4 @@ public class MenuScript : MonoBehaviour
         Debug.Log("Controls button pushed");
     }
 
-    IEnumerator SceneTransitionDelay() 
-    {
-        yield return new WaitForSeconds(5);
-    }
 }
