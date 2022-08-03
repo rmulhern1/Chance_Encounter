@@ -104,7 +104,7 @@ public class NPCAnimationController : MonoBehaviour
 
             if (currentSlide >= 16)
             {
-                //hologramSlides[currentSlide].SetActive(false);
+                hologramSlides[currentSlide].SetActive(false);
                 npcAnimator.GetComponent<Animator>().SetTrigger("AfterRepairHologram");
                 repairHologram = false;
                 decisionHologram = true;
@@ -145,6 +145,7 @@ public class NPCAnimationController : MonoBehaviour
     void StationaryTransition()
     {
         Debug.Log("Stationary Transition Transition Called");
-        UIAnimator.GetComponent<Animator>().SetTrigger("FadeOut");
+        //UIAnimator.GetComponent<Animator>().SetTrigger("MainFadeOut");
+        SceneManager.LoadScene(2);
     }
 }

@@ -3105,11 +3105,13 @@ MonoBehaviour:
   - {fileID: 8882012812144640324}
   - {fileID: 1333451933770694093}
   - {fileID: 1789131869031551367}
+  UIAnimator: {fileID: 0}
   currentSlide: 0
   inputA: 0
   npcRigHead: {fileID: 1382712275}
   npcRigTorso: {fileID: 2084586872}
   rigWeightAdd: 0
+  isStationary: 0
 --- !u!1001 &1228029008
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5165,8 +5167,8 @@ MonoBehaviour:
   head:
     vrTarget: {fileID: 1296474601}
     rigTarget: {fileID: 1297207618}
-    trackingPositionOffset: {x: 0, y: -0.5, z: 0.08}
-    trackingRotationOffset: {x: 0, y: 180, z: -77}
+    trackingPositionOffset: {x: 0, y: -0.5, z: 0.025}
+    trackingRotationOffset: {x: 0, y: 175, z: -77}
   leftHand:
     vrTarget: {fileID: 796528691}
     rigTarget: {fileID: 574374680}

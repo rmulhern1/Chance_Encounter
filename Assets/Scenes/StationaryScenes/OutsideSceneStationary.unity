@@ -2822,8 +2822,8 @@ MonoBehaviour:
   head:
     vrTarget: {fileID: 168183695}
     rigTarget: {fileID: 574968485}
-    trackingPositionOffset: {x: 0, y: -0.5, z: 0.08}
-    trackingRotationOffset: {x: 0, y: 180, z: -77}
+    trackingPositionOffset: {x: 0, y: -0.5, z: 0.025}
+    trackingRotationOffset: {x: 0, y: 175, z: -77}
   leftHand:
     vrTarget: {fileID: 284121333}
     rigTarget: {fileID: 198087152}
@@ -3652,7 +3652,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 904365785}
   m_LocalRotation: {x: -0.1049442, y: 0.1049442, z: -0.69927585, w: 0.69927585}
-  m_LocalPosition: {x: -0.45, y: 0.39, z: -2.76}
+  m_LocalPosition: {x: -0.6, y: 0.39, z: -3.08}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 806585018}
@@ -5528,11 +5528,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   npcAnimator: {fileID: 1617943948}
   hologramSlides: []
+  UIAnimator: {fileID: 0}
   currentSlide: 0
   inputA: 0
   npcRigHead: {fileID: 1521550682}
   npcRigTorso: {fileID: 53971633}
   rigWeightAdd: 0
+  isStationary: 0
 --- !u!1 &1618227689
 GameObject:
   m_ObjectHideFlags: 0
