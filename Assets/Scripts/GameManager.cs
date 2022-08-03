@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject shipAnimator;
     [SerializeField] GameObject UIAnimator;
     [SerializeField] GameObject LightAnimator;
+    [SerializeField] GameObject EngineLightAnimator;
+    [SerializeField] GameObject EngineLightAnimator2;
 
     //[SerializeField] Animator puzzlePanelAnimator;
     //[SerializeField] Animator puzzlePanelObjectAnimator;
@@ -31,10 +33,6 @@ public class GameManager : MonoBehaviour
         npcAnimator.GetComponent<Animator>().SetTrigger("ThumbsUp");
     }
 
-    public void minusPuzzleElement() 
-    {
-        PuzzleTracker -= 1;
-    }
 
     void PuzzleComplete() 
     {
@@ -43,16 +41,18 @@ public class GameManager : MonoBehaviour
         npcAnimator.GetComponent<Animator>().SetTrigger("Ending");
         shipAnimator.GetComponent<Animator>().SetTrigger("Ending");
         LightAnimator.GetComponent<Animator>().SetTrigger("Green");
-
+        EngineLightAnimator.GetComponent<Animator>().SetTrigger("Engine");
+        EngineLightAnimator2.GetComponent<Animator>().SetTrigger("Engine");
+        
         StartCoroutine(EndingTransition());
     }
 
     IEnumerator EndingTransition() 
     {
-        yield return new WaitForSeconds(30);
+        yield return new WaitForSeconds(35);
 
-        Debug.Log("Waited 10 Seconds ending");
-        UIAnimator.GetComponent<Animator>().SetTrigger("FadeOut");
+        Debug.Log("Waited 35 Seconds ending");
+        UIAnimator.GetComponent<Animator>().SetTrigger("EndingAnim");
 
         SceneManager.LoadScene(0);
     }

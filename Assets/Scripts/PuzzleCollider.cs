@@ -26,10 +26,10 @@ public class PuzzleCollider : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit(Collider collider)
+    /*private void OnTriggerExit(Collider collider)
     {
         Debug.Log("Puzzle Element exited boundary");
         targetElement.transform.GetComponent<MeshRenderer>().material = mat2;
         gm.minusPuzzleElement();
-    }
+    }*/
 }

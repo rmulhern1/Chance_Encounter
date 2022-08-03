@@ -18,15 +18,27 @@ public class NPCAnimationController : MonoBehaviour
     public Rig npcRigHead;
     public Rig npcRigTorso;
 
+    public bool rigWeightAdd;
+
     // Start is called before the first frame update
     void Start()
     {
-        currentSlide = -1;
+        currentSlide = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (rigWeightAdd)
+        {
+            npcRigHead.weight = 1;
+            npcRigTorso.weight = 1;
+        }
+        else if (!rigWeightAdd) {
+            npcRigHead.weight = 0;
+            npcRigTorso.weight = 0;
+        }
+
         if (crashHologram)
         {
             CrashHologram();
@@ -44,15 +56,17 @@ public class NPCAnimationController : MonoBehaviour
     void RemoveRigWeight() 
     {
         Debug.Log("Called remove rig weight");
-        npcRigHead.weight = 0;
-        npcRigTorso.weight = 0;
+        rigWeightAdd = false;
+        //npcRigHead.weight = 0;
+        //npcRigTorso.weight = 0;
     }
 
     void AddRigWeight() 
     {
         Debug.Log("Called add rig weight");
-        npcRigHead.weight = 1;
-        npcRigTorso.weight = 1;
+        rigWeightAdd = true;
+        //npcRigHead.weight = 1;
+        //npcRigTorso.weight = 1;
     }
 
     void CrashHologram() 
@@ -64,7 +78,7 @@ public class NPCAnimationController : MonoBehaviour
             hologramSlides[currentSlide - 1].SetActive(false);
             hologramSlides[currentSlide].SetActive(true);
 
-            if (currentSlide > 12)
+            if (currentSlide >=11)
             {
                 hologramSlides[currentSlide].SetActive(false);
                 npcAnimator.GetComponent<Animator>().SetTrigger("AfterCrashHologram");
@@ -85,11 +99,12 @@ public class NPCAnimationController : MonoBehaviour
             hologramSlides[currentSlide - 1].SetActive(false);
             hologramSlides[currentSlide].SetActive(true);
 
-            if (currentSlide > 17)
+            if (currentSlide >= 16)
             {
-                hologramSlides[currentSlide].SetActive(false);
+                //hologramSlides[currentSlide].SetActive(false);
                 npcAnimator.GetComponent<Animator>().SetTrigger("AfterRepairHologram");
                 repairHologram = false;
+                decisionHologram = true;
             }
 
             inputA = !inputA;
@@ -101,12 +116,15 @@ public class NPCAnimationController : MonoBehaviour
         Debug.Log("Waiting for user to make decision");
         if (OVRInput.GetDown(OVRInput.Button.One))
         {
-            if (currentSlide > 18)
+            currentSlide += 1;
+            hologramSlides[currentSlide].SetActive(true);
+            hologramSlides[currentSlide - 1].SetActive(false);
+
+            if (currentSlide >= 17)
             {
                 Debug.Log("A button pressed");
-                currentSlide += 1;
-                hologramSlides[currentSlide - 1].SetActive(false);
-                npcAnimator.GetComponent<Animator>().SetBool("Decision", true);
+                //npcAnimator.GetComponent<Animator>().SetBool("Decision", true);
+                npcAnimator.GetComponent<Animator>().SetTrigger("DecisionMade");
             }
             inputA = !inputA;
 
