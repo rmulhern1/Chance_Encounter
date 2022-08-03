@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Animations.Rigging;
 
 public class NPCAnimationController : MonoBehaviour
 {
     [SerializeField] GameObject npcAnimator;
     [SerializeField] GameObject[] hologramSlides;
+    [SerializeField] GameObject UIAnimator;
 
     [SerializeField] int currentSlide;
     [SerializeField] bool inputA;
@@ -19,8 +21,9 @@ public class NPCAnimationController : MonoBehaviour
     public Rig npcRigTorso;
 
     public bool rigWeightAdd;
-
-    // Start is called before the first frame update
+    public bool isStationary = false;
+    
+        // Start is called before the first frame update
     void Start()
     {
         currentSlide = 0;
@@ -124,11 +127,24 @@ public class NPCAnimationController : MonoBehaviour
             {
                 Debug.Log("A button pressed");
                 //npcAnimator.GetComponent<Animator>().SetBool("Decision", true);
-                npcAnimator.GetComponent<Animator>().SetTrigger("DecisionMade");
+                if (isStationary)
+                {
+                    npcAnimator.GetComponent<Animator>().SetTrigger("StationaryDecisionmade");
+                }
+                else
+                {
+                    npcAnimator.GetComponent<Animator>().SetTrigger("DecisionMade");
+                }
             }
             inputA = !inputA;
 
         }
+
     }
 
+    void StationaryTransition()
+    {
+        Debug.Log("Stationary Transition Transition Called");
+        UIAnimator.GetComponent<Animator>().SetTrigger("FadeOut");
+    }
 }
