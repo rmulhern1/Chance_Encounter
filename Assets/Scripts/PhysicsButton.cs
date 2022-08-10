@@ -15,14 +15,14 @@ public class PhysicsButton : MonoBehaviour
     public UnityEvent onPressed;
     public UnityEvent onReleased;
 
-    // Start is called before the first frame update
+    //Sets-up startPos and joint values at beginning of scene
     void Start()
     {
         _startPos = transform.localPosition;
         _joint = GetComponent<ConfigurableJoint>();
     }
 
-    // Update is called once per frame
+    //Checks if value of isPressed is higher or lower than 0 and calls neccessary fucntion
     void Update()
     {
         if (!_isPressed && GetValue() + threshold >= 1) {
@@ -33,6 +33,7 @@ public class PhysicsButton : MonoBehaviour
         }
     }
 
+    //Translates value of the button press to be between -1 and 1 for checking isPressed
     private float GetValue() 
     {
         var value = Vector3.Distance(_startPos, transform.localPosition) / _joint.linearLimit.limit;
@@ -41,11 +42,13 @@ public class PhysicsButton : MonoBehaviour
             value = 0;
         }
 
+        //Locks values between -1 and 1
         return Mathf.Clamp(value, -1f, 1f);
     }
 
     private void Pressed() 
     {
+        //Sets isPressed boolean and invokes onPressed unity event
         _isPressed = true;
         onPressed.Invoke();
         Debug.Log("Pressed");
@@ -53,6 +56,7 @@ public class PhysicsButton : MonoBehaviour
 
     private void Released() 
     {
+        //Sets isPressed boolean and invokes onReleased unity event
         _isPressed = false;
         onReleased.Invoke();
         Debug.Log("Released");

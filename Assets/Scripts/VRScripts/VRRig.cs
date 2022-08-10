@@ -32,6 +32,7 @@ public class VRRig : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Sets the headbodyOffset at the beginning of the scene
         headbodyOffset = transform.position - headConstraint.position;    
     }
 

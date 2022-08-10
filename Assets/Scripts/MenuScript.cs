@@ -15,12 +15,11 @@ public class MenuScript : MonoBehaviour
         ship.GetComponent<Animator>().SetTrigger("ShipTrigger");
         fadeOut.GetComponent<Animator>().SetTrigger("MenuFadeOut");
         Debug.Log("Start Button pushed");
-
-        //SceneManager.LoadScene(1);
     }
 
     public void Quit_Btn()
     {
+        //Quits application on button press
         Debug.Log("Quit Button pushed");
         Application.Quit();
     }

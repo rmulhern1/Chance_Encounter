@@ -12,7 +12,7 @@ public class AnimationColliderController : MonoBehaviour
 
     private void OnTriggerEnter(Collider collider)
     {
-        
+        //If the player collider enters the collider space, set rig weight on head and torso to 0
         if (collider.gameObject.tag == "Player")
         {
             Debug.Log("Player entered boundary");
@@ -23,6 +23,7 @@ public class AnimationColliderController : MonoBehaviour
 
     private void OnTriggerExit(Collider collider)
     {
+        //If the player collider leaves the collider space, set rig weight on head and torso to 1
         if (collider.gameObject.tag == "Player")
         {
             Debug.Log("Player left collider");

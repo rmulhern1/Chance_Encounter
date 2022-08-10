@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Keeps track of the current puzzle score
         if (PuzzleTracker >= 3) {
             PuzzleComplete();
         }
@@ -28,7 +29,7 @@ public class GameManager : MonoBehaviour
 
     public void addPuzzleElement() 
     {
-        //Tracks number of puzzle elements in correct location
+        //Tracks number of puzzle elements in correct location and plays NPC thumbs-up animation
         PuzzleTracker += 1;
         npcAnimator.GetComponent<Animator>().SetTrigger("ThumbsUp");
     }
@@ -36,6 +37,7 @@ public class GameManager : MonoBehaviour
 
     void PuzzleComplete() 
     {
+        //When all puzzle elements are complete, calls all necessary Animator triggers and begins ending transition
         Debug.Log("Initial puzzle elements compelte");
 
         npcAnimator.GetComponent<Animator>().SetTrigger("Ending");
@@ -49,6 +51,7 @@ public class GameManager : MonoBehaviour
 
     IEnumerator EndingTransition() 
     {
+        //Delays scene transition for narrative to complete before loading to next scene
         yield return new WaitForSeconds(35);
 
         Debug.Log("Waited 35 Seconds ending");

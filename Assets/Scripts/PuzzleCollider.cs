@@ -13,6 +13,7 @@ public class PuzzleCollider : MonoBehaviour
 
     private void OnTriggerStay(Collider collider)
     {
+        //Checks if game object collider is puzzle element and updates object material when it remains in the collider
         if (collider.gameObject.tag == "PuzzleElement") {
             targetElement.transform.GetComponent<MeshRenderer>().material = mat1;
         }
@@ -20,6 +21,7 @@ public class PuzzleCollider : MonoBehaviour
 
     private void OnTriggerEnter(Collider collider)
     {
+        //When an object enters collider with correct tag, calls addPuzzleElement() from GameManager script
         Debug.Log("Puzzle Element entered boundary");
         if (collider.gameObject.tag == "PuzzleElement") {
             gm.addPuzzleElement();
